@@ -1,0 +1,37 @@
+<mvc:View
+xmlns:mvc="sap.ui.core.mvc"
+xmlns="sap.m"
+controllerName="my.app.controller.MainPage">
+<App>
+    <Page title="Meu Projeto">
+        <Text text="Olá Mundo"/>
+
+               <Table items="{/products}">
+        <columns>
+          <Column>
+            <Text text="ID" />
+          </Column>
+          <Column>
+            <Text text="Nome" />
+          </Column>
+          <Column>
+            <Text text="Preço" />
+          </Column>
+          <Column>
+            <Text text="Quantidade" />
+          </Column>
+        </columns>
+        <items>
+          <ColumnListItem>
+            <cells>
+              <ObjectIdentifier title="{id}" />
+              <Text text="{name}" />
+              <Text text="{price}" />
+              <Text text="{quantity}" />
+            </cells>
+          </ColumnListItem>
+        </items>
+      </Table>
+    </Page>
+</App>
+</mvc:View>

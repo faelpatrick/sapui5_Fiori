@@ -17,6 +17,7 @@
             <Table
                 items="{/products}"
                 id="productTable"
+                
             >
                 <columns>
                     <Column>

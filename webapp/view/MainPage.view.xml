@@ -5,7 +5,7 @@
     controllerName="my.app.controller.MainPage"
 >
     <App>
-        <Page title="Meu Projeto SAP - @faelpatrick">
+        <Page title="Meu Projeto SAPUI5 - @faelpatrick">
             <SearchField
                 width="100%"
                 search="onSearch"

@@ -51,7 +51,8 @@ sap.ui.define(
       // Avançar para a próxima página
       nextPage: function () {
         var iTotalPages = Math.ceil(this.iTotalItems / this.iPageSize);
-        if (this.iCurrentPage < iTotalPages) {
+          if (this.iCurrentPage < iTotalPages) {
+          MessageToast.show("Proxima pagina ");
           this.iCurrentPage++;
           this.applyPagination();
         }
@@ -59,7 +60,8 @@ sap.ui.define(
 
       // Voltar para a página anterior
       previousPage: function () {
-        if (this.iCurrentPage > 1) {
+          if (this.iCurrentPage > 1) {            
+          MessageToast.show("Pagina anterior");
           this.iCurrentPage--;
           this.applyPagination();
         }

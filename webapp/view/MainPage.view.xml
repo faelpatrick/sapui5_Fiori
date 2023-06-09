@@ -1,37 +1,76 @@
 <mvc:View
-xmlns:mvc="sap.ui.core.mvc"
-xmlns="sap.m"
-controllerName="my.app.controller.MainPage">
-<App>
-    <Page title="Meu Projeto">
-        <Text text="Olá Mundo"/>
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    controllerName="my.app.controller.MainPage"
+>
+    <App>
+        <Page title="Meu Projeto">
+            <Text text="Lista de Produtos" />
 
-               <Table items="{/products}">
-        <columns>
-          <Column>
-            <Text text="ID" />
-          </Column>
-          <Column>
-            <Text text="Nome" />
-          </Column>
-          <Column>
-            <Text text="Preço" />
-          </Column>
-          <Column>
-            <Text text="Quantidade" />
-          </Column>
-        </columns>
-        <items>
-          <ColumnListItem>
-            <cells>
-              <ObjectIdentifier title="{id}" />
-              <Text text="{name}" />
-              <Text text="{price}" />
-              <Text text="{quantity}" />
-            </cells>
-          </ColumnListItem>
-        </items>
-      </Table>
-    </Page>
-</App>
+            <SearchField
+                width="100%"
+                search="onSearch"
+                placeholder="Pesquisar por título"
+            />
+
+            <Table
+                items="{/products}"
+                id="productTable"
+            >
+                <columns>
+                    <Column>
+                        <Link
+                            text="id"
+                            press="onSort"
+                        />
+                    </Column>
+                    <Column>
+                        <Link
+                            text="name"
+                            press="onSort"
+                        />
+                    </Column>
+                    <Column>
+                        <Link
+                            text="price"
+                            press="onSort"
+                        />
+                    </Column>
+                    <Column>
+                        <Link
+                            text="quantity"
+                            press="onSort"
+                        />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <ObjectIdentifier title="{id}" />
+                            <Text text="{name}" />
+                            <Text text="{price}" />
+                            <Text text="{quantity}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+            <!-- Botões de navegação -->
+            <Bar>
+                <contentLeft>
+                    <Button
+                        text="Página Anterior"
+                        press="previousPage"
+                    />
+                </contentLeft>
+                <contentRight>
+                    <Button
+                        text="Próxima Página"
+                        press="nextPage"
+                    />
+                </contentRight>
+            </Bar>
+        </Page>
+    </App>
 </mvc:View>
